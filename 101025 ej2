@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+double calcularArea(double base, double altura) {
+    return base * altura;
+}
+
+
+double calcularPerimetro(double base, double altura) {
+    return 2 * (base + altura);
+}
+
+int main() {
+    double base, altura;
+
+
+    cout << "Introduce la base del rectangulo: ";
+    cin >> base;
+    cout << "Introduce la altura del rectangulo: ";
+    cin >> altura;
+
+
+    double area = calcularArea(base, altura);
+    double perimetro = calcularPerimetro(base, altura);
+
+
+    cout << "El área del rectangulo es: " << area << endl;
+    cout << "El perímetro del rectangulo es: " << perimetro << endl;
+
+    return 0;
+}
