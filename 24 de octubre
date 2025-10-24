@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+const int DIAS = 5;
+string dias[DIAS] ={"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"};
+float precio, totalDia, totalSemana = 0;
+int cantidad;
+
+cout <<"=== Calculo de ventas semanales ===\n";
+for (int i =0; i<DIAS; i++){
+    cout << "\nIngrese el precio unitario del "<< dias[i] <<":";
+    cin>> precio;
+    cout << "Ingrese la cantidad vendida del "<< dias[i]<<":";
+    cin>> cantidad;
+
+    totalDia = precio * cantidad;
+    cout << "Total de venta del " << dias[i] << ":" << totalDia << end1;
+
+    totalSemana += totalDia;
+}
+cout<<"n\-----------------------\n";
+cout<<"Total acumulado de la semana: "<<totalSemana << end1;
+
+return 0;
+}
