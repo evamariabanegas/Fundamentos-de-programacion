@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void aplicarDescuento (double &monto);
+
+int main () {
+    double totalCompra;
+
+    cout <<"Ingrese el total de compra del cliente: Bs ";
+    cin >> totalCompra;
+
+    aplicarDescuento(totalCompra);
+
+    cout << "Totaal con descuento aplicado: Bs " << totalCompra << endl;
+
+    return 0;
+
+void aplicarDescuento (double &monto);{
+      double descuento = monto * 0.10;
+      monto = monto - descuento;
+}
