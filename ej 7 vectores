@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Ingrese un número (1-20): ";
+    cin >> num;
+
+    string numeros[] = {"CERO","UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE",
+                        "DIEZ","ONCE","DOCE","TRECE","CATORCE","QUINCE","DIECISÉIS","DIECISIETE","DIECIOCHO","DIECINUEVE","VEINTE"};
+
+    if (num >= 0 && num <= 20)
+        cout << numeros[num] << endl;
+    else
+        cout << "Fuera de rango (solo hasta 20)." << endl;
+
+    return 0;
+}
