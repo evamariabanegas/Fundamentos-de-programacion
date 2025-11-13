@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<float> v = {2, 4, 6, 8, 10, 12};
+    for (size_t i = 0; i + 2 < v.size(); i++) {
+        float prom = (v[i] + v[i+1] + v[i+2]) / 3;
+        cout << "Promedio P" << i+1 << " = " << prom << endl;
+    }
+    return 0;
+}
