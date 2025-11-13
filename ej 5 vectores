@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {1, 2, 3, 2, 1};
+    bool capicua = true;
+    for (size_t i = 0; i < v.size() / 2; i++)
+        if (v[i] != v[v.size() - 1 - i]) capicua = false;
+    cout << (capicua ? "El vector es capicúa" : "El vector no es capicúa") << endl;
+    return 0;
+}
