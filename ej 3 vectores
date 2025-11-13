@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<float> v = {3.5, 7.2, 1.8, 9.6, 4.1};
+    float suma = 0;
+    for (float x : v) suma += x;
+    cout << "El promedio es: " << suma / v.size() << endl;
+    return 0;
+}
