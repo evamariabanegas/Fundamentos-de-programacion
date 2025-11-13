@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main() {
+    vector<float> v = {3.2, 5.6, 10.4, 7.3, 15.0};
+    float mayor = fabs(v[1] - v[0]);
+    for (size_t i = 1; i < v.size() - 1; i++) {
+        float dif = fabs(v[i+1] - v[i]);
+        if (dif > mayor) mayor = dif;
+    }
+    cout << "La mayor diferencia consecutiva es: " << mayor << endl;
+    return 0;
+}
