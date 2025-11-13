@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<float> v = {3.5, 7.2, 1.8, 9.6, 4.1};
+    float maximo = v[0];
+    for (float x : v)
+        if (x > maximo) maximo = x;
+    cout << "El valor máximo es: " << maximo << endl;
+    return 0;
+}
