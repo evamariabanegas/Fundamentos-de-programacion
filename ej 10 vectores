@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> A = {1, 3, 5, 7};
+    vector<int> B = {2, 4, 6, 8, 9};
+    vector<int> C;
+    size_t i = 0, j = 0;
+
+    while (i < A.size() && j < B.size()) {
+        if (A[i] < B[j])
+            C.push_back(A[i++]);
+        else
+            C.push_back(B[j++]);
+    }
+
+    while (i < A.size()) C.push_back(A[i++]);
+    while (j < B.size()) C.push_back(B[j++]);
+
+    cout << "Vector intercalado ordenado: ";
+    for (int x : C) cout << x << " ";
+    cout << endl;
+    return 0;
+}
