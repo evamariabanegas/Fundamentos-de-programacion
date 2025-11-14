@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<string> alumnos;
+    vector<float> notas;
+    int opcion;
+
+    do {
+        cout << "\nMENU\n";
+        cout << "1. Ingresar alumno y nota\n";
+        cout << "2. Listar alumnos\n";
+        cout << "3. Ordenar alfabeticamente\n";
+        cout << "4. Mostrar la mejor nota\n";
+        cout << "5. Promedio de notas\n";
+        cout << "6. Salir\n";
+        cout << "Seleccione opcion: ";
+        cin >> opcion;
+
+        switch(opcion) {
+            case 1: {
+                string nombre;
+                float nota;
+                cout << "Nombre: ";
+                cin >> nombre;
+                cout << "Nota: ";
+                cin >> nota;
+                alumnos.push_back(nombre);
+                notas.push_back(nota);
+                break;
+            }
+            case 2: {
+                cout << "Lista de alumnos:\n";
+                for (int i = 0; i < alumnos.size(); i++)
+                    cout << alumnos[i] << " - " << notas[i] << endl;
+                break;
+            }
+            case 3: {
+                vector<int> idx(alumnos.size());
+                for (int i = 0; i < idx.size(); i++) idx[i] = i;
+
+                sort(idx.begin(), idx.end(), [&](int a, int b){
+                    return alumnos[a] < alumnos[b];
+                });
+
+                cout << "Ordenados alfabeticamente:\n";
+                for (int i : idx)
+                    cout << alumnos[i] << " - " << notas[i] << endl;
+                break;
+            }
+            case 4: {
+                if (notas.empty()) break;
+                float mayor = notas[0];
+                int pos = 0;
+                for (int i = 1; i < notas.size(); i++)
+                    if (notas[i] > mayor) mayor = notas[i], pos = i;
+                cout << "Mejor nota: " << alumnos[pos] << " - " << mayor << endl;
+                break;
+            }
+            case 5: {
+                if (notas.empty()) break;
+                float suma = 0;
+                for (float x : notas) suma += x;
+                cout << "Promedio: " << suma / notas.size() << endl;
+                break;
+            }
+        }
+    } while (opcion != 6);
+
+    return 0;
+}
