@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<float> v = {3.5, 1.2, 7.8, 0.9, 5.4};
+
+    sort(v.begin(), v.end());
+
+    cout << "Vector ordenado ascendentemente: ";
+    for (float x : v) cout << x << " ";
+    return 0;
+}
