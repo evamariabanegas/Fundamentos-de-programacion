@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<string> alumnos = {"Ana", "Luis", "Carlos", "Maria", "Jose"};
+    vector<float> notas = {70, 85, 90, 60, 95};
+
+    vector<int> index(notas.size());
+    for (int i = 0; i < notas.size(); i++) index[i] = i;
+
+    sort(index.begin(), index.end(), [&](int a, int b){
+        return notas[a] > notas[b];
+    });
+
+    cout << "Los 3 mejores alumnos:\n";
+    for (int i = 0; i < 3; i++)
+        cout << alumnos[index[i]] << " - " << notas[index[i]] << endl;
+
+    return 0;
+}
